@@ -9,9 +9,13 @@
     <title>AKAN NAMES</title>
 </head>
 <body>
-  <img src="css/image/ghana.jpg" alt="A photo of ghana.jpg">
+  <section>
+    <!-- <div class="flag">
+
+    <img src="css/image/ghana.jpg" alt="A photo of ghana.jpg">
+    </div> -->
     <div class="container">
-      <div class="jumbotron">
+      <!-- <div class="jumbotron"> -->
     <h1>AKAN NAMES</h1>
   
     <P>This is a webpage about Ghanian names with the day that they were born and there names match the days of the week 
@@ -19,36 +23,62 @@
     </P>
     </div>
       </div>
-        <div class="form>
+        <div id="block1">
           <form name="Akan name">
-            <div class="form-group">
+            <div id="block">
               <label for="year">Enter BirthYear</label>
-              <input type="text" class="form-control" id="BirthYear" placeholder="Enter Year of Birth">
+              <input type="text"  id="birthYear" placeholder="Enter Year of Birth">
             </div>
-            <div class="form group">
+            <div id="block">
                 <label name="Month">Enter BirthMonth</label>
-                <input type="text" class="form-control" id="BirthMonth" placeholder="Enter Month of Birth">
+                <input type="text"  id="birthMonth" placeholder="Enter Month of Birth">
 
             </div>
-            <div class="form-group">
+            <div id="block">
                 <label for="day">Day of Birth</label>
-                <input type="text" class="form-control" id="Day of Birth" placeholder="Enter Day of Birth">
+                <input type="text"  id="dayOfBirth" placeholder="Enter Day of Birth">
             </div>
 
-                <input type="text" class="form-control" id="Gender"placeholder="Enter Gender">
-
-                <select class="form-control" name="Gender" id="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+               <div id="block">
+                <input type="text"  id="Gender"placeholder="Enter Gender">
+                
+                <select  name="Gender" id="gender">
+                <option value="Male"  id="male" >Male</option> 
+                <option value="Female" id="female">Female</option>
+               </div>
             </select>
     
-    </form>       
+        
+    <p id="output"></p>   
              
-    <input class="btn btn-primary" type="button" value="submit"on click="validateForm()"> 
+    <input class="btn btn-primary" type="button" value="submit"  id="btn"> 
     
     <input class="btn btn-primary" type="button" value="Clear Selection" onclick="reset()">
           </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </section>
 
       <script src="js/js script.js"></script>
     

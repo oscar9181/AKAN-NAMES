@@ -20,7 +20,7 @@ p {
         height: 110vh;
         text-align: center;
         background-color: rgba(0,0,0,.8);
-        background-image: url('/eris.jpg');
+        background-image: url('image/eris.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

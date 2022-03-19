@@ -1,50 +1,49 @@
 
-const daysWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-let namesMale = ["Kwasi", "Kwadwo", "Kofi", "Kwame", "Kwabena", "Kwaku", "Yaw"]
-let namesFemale = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]
-let btn = document.querySelector("#btn");
-let sex;
-btn.addEventListener("click", (e)=>{
-    e.preventDefault();
-    getUserInput()
-})
-var getUserInput = function () {
-    
-    let inputDay = document.getElementById("dayOfBirth").value
-    let intDay = parseInt(inputDay)
+// Function to reset the form
+function formReset() {
+    document.getElementById('form_data').reset();
+}
 
-    let inputMonth = document.getElementById("birthMonth").value
-    let month = parseInt(inputMonth)
 
-    let inputYear = document.getElementById("birthYear").value
-    let Year = parseInt(inputYear)
+// main function
+function akanNames() {
+    // user generated input
+    var gender = document.getElementById('gender').value
+    var birthDay = document.getElementById('birthday').value
 
-     /* let inputGender = document.getElementById("gender");
-    sex = inputGender.value */
-
-    var male = document.getElementById("male")
-    var female = document.getElementById("female")
-
+    //array days of the week and male and female akan names
+    const akanArray = [
+        ['Sunday', 'Kwasi', 'Akosua'],
+        ['Monday', 'Kwado', 'Adowa' ],
+        ['Tuesday','Kwabena', 'Abenaa'],
+        ['Wednesday', 'Kwaku', 'Akua'],
+        ['Thursday', 'Yaw' ,'Yaa'],
+        ['Friday', 'Kofi' ,'Afua'],
+        ['Saturday', 'Kwame', 'Ama'],
+    ];
    
+    // format date to derive the day of the week 
+    const d = new Date(birthDay);
+    let day = d.getDay();
+    let year = d.getFullYear();
 
-      if (intDay < 1 || intDay > 31){
-        alert('Valid days are between 1 and 31. Please input a valid day.');
-        
+    // assigns value to the day and gender 
+    var dayOfTheWeek = akanArray[day][0];
+    var genderMale = akanArray[day][1];
+    var genderFemale = akanArray[day][2];
+
+    // added logical operators for gender
+    if (gender == '') {
+        alert('Please input your gender');
+    } else if (year >= 2022) {
+        alert('Too young! please put the correct year')
+    } else if (gender == 'male') {
+        document.getElementById('message').innerHTML = 'You were born on a ' + dayOfTheWeek + ' and your akan name is ' + genderMale
+    } else if (gender == 'female') {
+        document.getElementById('message') .innerHTML = 'You were born on a ' + dayOfTheWeek + ' and your akan name is ' + genderFemale
     }
 
-     if (month < 1 || month > 12){
-        alert('Valid months are between 1 and 12. Please input a valid month.');
-        
-    }
-    if(male.selected === true){
-        alert(namesMale[intDay]);
-    }
-    
-    else{
-        alert(namesFemale[intDay])
-    }
-
-
-
+    // Reset function
+    formReset()   
 
 }
